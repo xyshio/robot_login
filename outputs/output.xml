@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.2 on win32)" generated="2026-01-02T11:20:50.929361" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\work\robot_login\login.robot">
+<kw name="Open Browser To Login Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T11:20:51.203462" level="INFO">Opening browser 'chrome' to base url 'https://play1.automationcamp.ir/login.html'.</msg>
+<msg time="2026-01-02T11:20:57.043992" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T11:20:51.203231" elapsed="9.255498"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T11:21:00.458962" elapsed="0.028360"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=${LOC_LOGIN_BOX_ID}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T11:21:00.487473" elapsed="0.010323"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:20:51.202717" elapsed="9.295174"/>
+</kw>
+<test id="s1-t1" name="User Can Log In" line="22">
+<kw name="Input Email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T11:21:00.498926" level="INFO">Typing text 'admin' into text field 'id=user'.</msg>
+<arg>id=${LOC_LOGIN_BOX_ID}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T11:21:00.498737" elapsed="0.204214"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:21:00.498505" elapsed="0.204621"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-01-02T11:21:00.704775" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-01-02T11:21:00.951901" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=${LOC_PASS_BOX_ID}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T11:21:00.704575" elapsed="0.311357"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:21:00.704361" elapsed="0.311653"/>
+</kw>
+<kw name="Submit Login Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T11:21:01.017060" level="INFO">Clicking button 'id=login'.</msg>
+<arg>id=${LOC_SUBM_BTN_ID}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T11:21:01.016878" elapsed="0.968020"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:21:01.016537" elapsed="0.968450"/>
+</kw>
+<kw name="Login Should Be Successful">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_BELKA_XPATH}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T11:21:01.985520" elapsed="0.025887"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:21:01.985323" elapsed="0.026166"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-02T11:21:02.011953" elapsed="0.000248"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:21:00.497955" elapsed="1.514567"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T11:21:02.013422" elapsed="2.631479"/>
+</kw>
+<status status="PASS" start="2026-01-02T11:20:50.931575" elapsed="13.713433"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-02T11:20:57.043992" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+</errors>
+</robot>
