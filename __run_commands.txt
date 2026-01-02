@@ -1,0 +1,2 @@
+python -m robot --outputdir outputs login.robot
+python -m robot --outputdir outputs_simple login_simple.robot
